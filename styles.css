@@ -43,10 +43,11 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: all 0.7s ease-in-out;
 }
 
 #search-button:hover {
-    background-color: #45a049;
+    background-color: #2e7732;
 }
 
 .pokemon-info {

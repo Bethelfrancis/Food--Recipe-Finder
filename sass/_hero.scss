@@ -1,0 +1,23 @@
+.hero-section {
+    background: url('../css/food.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 450px;
+    text-align: center;
+    margin-top: 80px;
+
+    .hero-content  {
+        padding: 140px 0;
+        color: $green;
+
+        h2 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 20px;
+            color: $white;
+        }
+    }
+}

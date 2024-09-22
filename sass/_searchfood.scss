@@ -1,0 +1,138 @@
+.search-bar {
+  @include flex-layout(center, center);
+  padding: 20px;
+
+  input {
+    max-width: 300px;
+    width: 100%;
+    font-size: 17px;
+    background: $black;
+    color: $white;
+    padding: 10px;
+    border: 1px solid #5e5d5d;
+    border-radius: 5px;
+
+    &:focus {
+        background: $black;
+        outline: 1px solid $white;
+    }
+  }
+
+  button {
+    font-size: 17px;
+    background: $green;
+    color: $white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background: $btn-hover;
+    }
+  }
+}
+
+.food {
+  @include flex-layout(space-between, center);
+  flex-direction: column;
+  border-bottom: 1px solid $white;
+  padding: 3%;
+
+  .food-container {
+    @include flex-layout(center, none);
+    flex-wrap: wrap;
+    gap: 50px; 
+  
+    .food-item {
+      @include flex-layout(center, center);
+      flex-direction: column;
+      background-color: $white;
+      width: 100%;
+      max-width: 320px;
+      border-radius: 10px;
+      overflow: hidden;
+      transform: scale(1);
+      transition: transform 0.7s ease-in-out;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+      &:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+      }
+  
+      .food-image {
+          width: 100%;
+  
+          img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+          }
+      }
+    }
+  
+    .food-details {
+      @include flex-layout(space-between, none);
+      flex-direction: column;
+      padding: 15px;
+  
+      h3 {
+        font-size: 28px;
+        color: $black;
+        margin-bottom: 10px;
+      }
+  
+      p {
+        font-size: 18px;
+        color: $black;
+        margin-bottom: 10px;
+        opacity: 0.9;
+      }
+  
+      .recipe-links {
+        @include flex-layout(none, start);
+        flex-direction: column;
+  
+        .recipe-btn {
+          text-decoration: none;
+          background-color: $green;
+          color: $white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          transition: background-color 0.3s;
+          margin-bottom: 10px;
+  
+          &:hover {
+            background-color: $btn-hover;
+          }
+        }
+  
+        iframe {
+          width: 100%;
+          height: 150px;
+          border: none;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
+  #load-more {
+    display: none;
+    font-size: 17px;
+    background: $green;
+    color: $white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 40px;
+    cursor: pointer;
+    transition: all 0.8s ease;
+
+    &:hover {
+        background: $btn-hover;
+    }
+  }
+}

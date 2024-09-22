@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  background-color: #202020;
+  color: #fff;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #202020;
+  padding: 25px 2%;
+  border-bottom: 1px solid #fff;
+  z-index: 5;
+}
+.nav-bar h1 {
+  font-size: 30px;
+  font-family: "Courier New", Courier, monospace;
+  color: #1db954;
+}
+.nav-bar .nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  font-size: 18px;
+}
+@media (max-width: 800px) {
+  .nav-bar .nav-links {
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    right: -400px;
+    width: 80%;
+    height: 100vh;
+    background-color: #1db954;
+    transition: all 0.5s ease-in-out;
+  }
+}
+.nav-bar .nav-links.show {
+  right: 0;
+}
+.nav-bar .nav-links .nav-link-btn {
+  margin: 0 35px;
+}
+.nav-bar .nav-links .nav-link-btn a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.6s ease;
+}
+@media (max-width: 800px) {
+  .nav-bar .nav-links .nav-link-btn a {
+    background-color: #202020;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+}
+.nav-bar .nav-links .nav-link-btn a:hover {
+  color: #1db954;
+}
+.nav-bar .menu-hambuger {
+  display: none;
+  position: absolute;
+  background: inherit;
+  right: 0.5rem;
+  top: 1.1rem;
+  cursor: pointer;
+  z-index: 5;
+}
+@media (max-width: 800px) {
+  .nav-bar .menu-hambuger {
+    display: block;
+  }
+}
+.nav-bar .menu-hambuger .hambuger {
+  position: absolute;
+  right: 0.8rem;
+  top: 1.5rem;
+  width: 28px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.nav-bar .menu-hambuger .hambuger::before {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 28px;
+  height: 2px;
+  top: -8px;
+  transition: all 0.5s ease-in-out;
+}
+.nav-bar .menu-hambuger .hambuger::after {
+  content: "";
+  position: absolute;
+  background: #fff;
+  width: 28px;
+  height: 2px;
+  top: 8px;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+}
+.nav-bar .menu-hambuger .hambuger.open {
+  transform: rotate(45deg);
+}
+.nav-bar .menu-hambuger .hambuger.open::before {
+  transform: rotate(90deg);
+  top: 0;
+}
+.nav-bar .menu-hambuger .hambuger.open::after {
+  width: 22px;
+  background: transparent;
+  top: 0;
+}
+
+.hero-section {
+  background: url("../css/food.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+  text-align: center;
+  margin-top: 80px;
+}
+.hero-section .hero-content {
+  padding: 140px 0;
+  color: #1db954;
+}
+.hero-section .hero-content h2 {
+  font-size: 40px;
+}
+.hero-section .hero-content p {
+  font-size: 20px;
+  color: #fff;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.search-bar input {
+  max-width: 300px;
+  width: 100%;
+  font-size: 17px;
+  background: #202020;
+  color: #fff;
+  padding: 10px;
+  border: 1px solid #5e5d5d;
+  border-radius: 5px;
+}
+.search-bar input:focus {
+  background: #202020;
+  outline: 1px solid #fff;
+}
+.search-bar button {
+  font-size: 17px;
+  background: #1db954;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.search-bar button:hover {
+  background: #1d753c;
+}
+
+.food {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #fff;
+  padding: 3%;
+}
+.food .food-container {
+  display: flex;
+  justify-content: center;
+  align-items: none;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.food .food-container .food-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #fff;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 10px;
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.7s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.food .food-container .food-item:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+.food .food-container .food-item .food-image {
+  width: 100%;
+}
+.food .food-container .food-item .food-image img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.food .food-container .food-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: none;
+  flex-direction: column;
+  padding: 15px;
+}
+.food .food-container .food-details h3 {
+  font-size: 28px;
+  color: #202020;
+  margin-bottom: 10px;
+}
+.food .food-container .food-details p {
+  font-size: 18px;
+  color: #202020;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+.food .food-container .food-details .recipe-links {
+  display: flex;
+  justify-content: none;
+  align-items: start;
+  flex-direction: column;
+}
+.food .food-container .food-details .recipe-links .recipe-btn {
+  text-decoration: none;
+  background-color: #1db954;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+.food .food-container .food-details .recipe-links .recipe-btn:hover {
+  background-color: #1d753c;
+}
+.food .food-container .food-details .recipe-links iframe {
+  width: 100%;
+  height: 150px;
+  border: none;
+  border-radius: 8px;
+}
+.food #load-more {
+  display: none;
+  font-size: 17px;
+  background: #1db954;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: all 0.8s ease;
+}
+.food #load-more:hover {
+  background: #1d753c;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  height: 300px;
+  max-height: 400px;
+}
+.contact-section h2 {
+  font-size: 40px;
+  color: #1db954;
+  margin-bottom: 20px;
+}
+.contact-section p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.contact-section p a {
+  color: #1db954;
+  text-decoration: none;
+}
+.contact-section p a:hover {
+  text-decoration: underline;
+}
+.contact-section .img-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.contact-section .img-row img {
+  width: 40px;
+  height: 40px;
+  transition: all 0.8s ease;
+}
+.contact-section .img-row img:hover {
+  transform: scale(1.1) translateY(-5px);
+}
+
+footer {
+  background: #202020;
+  text-align: center;
+  padding: 20px;
+}/*# sourceMappingURL=main.css.map */

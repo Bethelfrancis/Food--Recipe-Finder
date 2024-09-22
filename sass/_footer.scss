@@ -1,0 +1,50 @@
+.contact-section {
+    @include flex-layout(center, center);
+    flex-direction: column;
+    text-align: center;
+    color: $white;
+    border-bottom: 1px solid $white;
+    height: 300px;
+    max-height: 400px;
+    
+    h2 {
+        font-size: 40px;
+        color: $green;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 20px;
+        margin-bottom: 10px;
+
+        a {
+            color: $green;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .img-row {
+        @include flex-layout(center, center);
+        gap: 20px;
+
+        img {
+            width: 40px;
+            height: 40px;
+            transition: all 0.8s ease;
+
+            &:hover {
+                transform: scale(1.1) translateY(-5px);
+            }
+        }
+    }
+}
+
+footer {
+    background: $black;
+    text-align: center;
+    padding: 20px;
+}

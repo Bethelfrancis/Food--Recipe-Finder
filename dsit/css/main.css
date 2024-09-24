@@ -45,7 +45,7 @@ body {
     justify-content: space-around;
     position: absolute;
     top: 0;
-    right: -400px;
+    right: -100rem;
     width: 80%;
     height: 100vh;
     background-color: #1db954;
